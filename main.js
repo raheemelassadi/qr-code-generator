@@ -13,19 +13,30 @@ document.addEventListener('DOMContentLoaded', function() {
   
     qrForm.addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent form submission
-      const value = userInput.value;
-      generateQRCode(value);
+      const value = userInput.value.trim();
+  
+      if (value) {
+        generateQRCode(value);
+      } else {
+        alert('Error: Please enter a value.');
+      }
     });
   
-    userInput.addEventListener('keydown', function(event) {
-      if (event.key === 'Enter') {
-        event.preventDefault(); // Prevent form submission
-        const value = userInput.value;
+    // Add event listener for button click
+    const generateButton = document.querySelector('#generate-button');
+    generateButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent form submission
+      const value = userInput.value.trim();
+  
+      if (value) {
         generateQRCode(value);
+      } else {
+        alert('Error: Please enter a value.');
       }
     });
   
     // Generate initial QR code on page load
-    generateQRCode('https://www.google.com');
+    const initialValue = 'https://www.google.com';
+    generateQRCode(initialValue);
   });
   
