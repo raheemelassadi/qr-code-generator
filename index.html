@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
-    <script src="main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
-    <h4>Enter Text to generate QR Code</h4>
-    <input id="user-input" />
-    <div id="qr-code"></div>
+  <h4>Enter Text to generate QR Code</h4>
+  <form id="qr-form">
+    <input type="text" id="user-input" />
+    <button type="submit">Generate QR Code</button>
+  </form>
+  <div id="qr-code"></div>
 </body>
 </html>
